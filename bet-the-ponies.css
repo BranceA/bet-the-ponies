@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 10% 70% 20%;
+}
+
+header {
+    background-color: green;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+main {
+    background-color: blue;
+    grid-area: 2 / 1 / 3 / 2;
+    display: grid;
+    grid-template-rows: 40% repeat(6, 10%);
+}
+
+footer {
+    background-color: brown;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+div.sky {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: blue;
+}
+
+div.lane-1 {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: #855439;
+    border-top: 4px dashed white;
+    border-bottom: 2px dashed white;
+}
+
+div.test-horse {
+    height: 100%;
+    width: 4%;
+    background-color: magenta;
+    position: relative;
+}
+
+div.move-test-horse {
+    position: absolute;
+    transition: left 2s;
+    left: 20%;
+}
+
+div.lane-2 {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: #855439;
+    border-top: 2px dashed white;
+    border-bottom: 2px dashed white;
+}
+
+div.lane-3 {
+    grid-area: 4 / 1 / 5 / 2;
+    background-color: #855439;
+    border-top: 2px dashed white;
+    border-bottom: 2px dashed white;
+}
+
+div.lane-4 {
+    grid-area: 5 / 1 / 6 / 2;
+    background-color: #855439;
+    border-top: 2px dashed white;
+    border-bottom: 2px dashed white;
+}
+
+div.lane-5 {
+    grid-area: 6 / 1 / 7 / 2;
+    background-color: #855439;
+    border-top: 2px dashed white;
+    border-bottom: 2px dashed white;
+}
+
+div.lane-6 {
+    grid-area: 7 / 1 / 8 / 2;
+    background-color: #855439;
+    border-top: 2px dashed white;
+    border-bottom: 4px dashed white;
+}
