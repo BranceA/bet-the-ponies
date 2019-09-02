@@ -44,7 +44,7 @@ ul {
     justify-content: space-evenly;
 }
 
-li {
+.top-table {
     border: 1px solid white;
 }
 
