@@ -175,3 +175,4 @@ var horseNumberTwenty = {
     odds: 2
 };
 
+var horseArray = [horseNumberOne, horseNumberTwo, horseNumberThree, horseNumberFour, horseNumberFive, horseNumberSix, horseNumberSeven, horseNumberEight, horseNumberNine, horseNumberTen, horseNumberEleven, horseNumberTwelve, horseNumberThirteen, horseNumberFourteen, horseNumberFifteen, horseNumberSixteen, horseNumberSeventeen, horseNumberEighteen, horseNumberNineteen, horseNumberTwenty];
