@@ -173,6 +173,8 @@ function pickRandomHorses () {
     $("#horse-5-li").text(laneFiveHorse.name);
     $("#horse-6-li").text(laneSixHorse.name);
 
+
+
     console.log(laneOneHorse);
     console.log(laneTwoHorse);
     console.log(laneThreeHorse);
