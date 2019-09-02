@@ -38,15 +38,9 @@ div.lane-1 {
 
 div.test-horse {
     height: 100%;
-    width: 4%;
+    width: 5vw;
     background-color: magenta;
     position: relative;
-}
-
-div.move-test-horse {
-    position: absolute;
-    transition: left 2s;
-    left: 20%;
 }
 
 div.lane-2 {
