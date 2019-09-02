@@ -1,5 +1,4 @@
 var startButton = document.getElementById('start');
-var testHorse = document.getElementById('test-horse');
 
 var horseNumberOne = {
     name: "David Bowie",
@@ -176,6 +175,8 @@ var laneFourHorse;
 var laneFiveHorse;
 var laneSixHorse;
 
+var playerMoney = 1000;
+
 function pickRandomHorses () {
     laneOneHorse = horseArray[Math.floor(Math.random() * 20)];
 
@@ -316,3 +317,4 @@ $("button").click(function(){
 });
 
 
+$("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");

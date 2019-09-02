@@ -22,6 +22,16 @@ main {
 footer {
     background-color: brown;
     grid-area: 3 / 1 / 4 / 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+ol {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#money {
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 div.sky {
