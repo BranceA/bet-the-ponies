@@ -236,7 +236,7 @@ $("button").click(function(){
     $("#horse-one-box").animate({left: "+=19vw"}, fourthInterval);
     $("#horse-one-box").animate({left: "+=19vw"}, fifthInterval);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotal + laneOneHorse.name +"</li>");
+        $("ol").append("<li>" + laneOneHorse.name + ": " + (intervalTotal / 1000) + "</li>");
     }, intervalTotal);
 
     console.log("this works");
@@ -252,7 +252,7 @@ $("button").click(function(){
     $("#horse-two-box").animate({left: "+=19vw"}, fourthIntervalTwo);
     $("#horse-two-box").animate({left: "+=19vw"}, fifthIntervalTwo);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotalTwo + laneTwoHorse.name + "</li>");
+        $("ol").append("<li>" + laneTwoHorse.name + ": " + (intervalTotalTwo / 1000) + "</li>");
     }, intervalTotalTwo);
 
     var firstIntervalThree = Math.floor(Math.random() * (laneThreeHorse.maxInterval - laneThreeHorse.minInterval) + laneThreeHorse.minInterval);
@@ -267,7 +267,7 @@ $("button").click(function(){
     $("#horse-three-box").animate({left: "+=19vw"}, fourthIntervalThree);
     $("#horse-three-box").animate({left: "+=19vw"}, fifthIntervalThree);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotalThree + laneThreeHorse.name + "</li>");
+        $("ol").append("<li>" + laneThreeHorse.name + ": " + (intervalTotalThree / 1000) + "</li>");
     }, intervalTotalThree);
 
     var firstIntervalFour = Math.floor(Math.random() * (laneFourHorse.maxInterval - laneFourHorse.minInterval) + laneFourHorse.minInterval);
@@ -282,7 +282,7 @@ $("button").click(function(){
     $("#horse-four-box").animate({left: "+=19vw"}, fourthIntervalFour);
     $("#horse-four-box").animate({left: "+=19vw"}, fifthIntervalFour);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotalFour + laneFourHorse.name + "</li>");
+        $("ol").append("<li>" + laneFourHorse.name + ": " + (intervalTotalFour / 1000) + "</li>");
     }, intervalTotalFour);
 
     var firstIntervalFive = Math.floor(Math.random() * (laneFiveHorse.maxInterval - laneFiveHorse.minInterval) + laneFiveHorse.minInterval);
@@ -297,7 +297,7 @@ $("button").click(function(){
     $("#horse-five-box").animate({left: "+=19vw"}, fourthIntervalFive);
     $("#horse-five-box").animate({left: "+=19vw"}, fifthIntervalFive);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotalFive + laneFiveHorse.name + "</li>");
+        $("ol").append("<li>" + laneFiveHorse.name + ": " + (intervalTotalFive / 1000) + "</li>");
     }, intervalTotalFive);
 
     var firstIntervalSix = Math.floor(Math.random() * (laneSixHorse.maxInterval - laneSixHorse.minInterval) + laneSixHorse.minInterval);
@@ -312,7 +312,7 @@ $("button").click(function(){
     $("#horse-six-box").animate({left: "+=19vw"}, fourthIntervalSix);
     $("#horse-six-box").animate({left: "+=19vw"}, fifthIntervalSix);
     var timeoutId = setTimeout(function () {
-        $("ol").append("<li>" + intervalTotalSix + laneSixHorse.name + "</li>");
+        $("ol").append("<li>" + laneSixHorse.name + ": " + (intervalTotalSix / 1000) + "</li>");
     }, intervalTotalSix);
 });
 
