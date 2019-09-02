@@ -145,7 +145,40 @@ var horseArray = [horseNumberOne, horseNumberTwo, horseNumberThree, horseNumberF
 
 function pickRandomHorses () {
     var laneOneHorse = horseArray[Math.floor(Math.random() * 20)];
+
+    do {
+        var laneTwoHorse = horseArray[Math.floor(Math.random() * 20)];
+    } while (laneOneHorse === laneTwoHorse);
+
+    do {
+        var laneThreeHorse = horseArray[Math.floor(Math.random() * 20)];
+    } while (laneTwoHorse === laneThreeHorse || laneOneHorse === laneThreeHorse);
+
+    do {
+        var laneFourHorse = horseArray[Math.floor(Math.random() * 20)];
+    } while (laneFourHorse === laneOneHorse || laneFourHorse === laneTwoHorse || laneFourHorse === laneThreeHorse);
+
+    do {
+        var laneFiveHorse = horseArray[Math.floor(Math.random() * 20)];
+    } while (laneFiveHorse === laneOneHorse || laneFiveHorse === laneTwoHorse || laneFiveHorse === laneThreeHorse || laneFiveHorse === laneFourHorse);
+
+    do {
+        var laneSixHorse = horseArray[Math.floor(Math.random() * 20)];
+    } while (laneSixHorse === laneOneHorse || laneSixHorse === laneTwoHorse || laneSixHorse === laneThreeHorse || laneSixHorse === laneFourHorse || laneSixHorse === laneFiveHorse);
+
     $("#horse-1-li").text(laneOneHorse.name);
+    $("#horse-2-li").text(laneTwoHorse.name);
+    $("#horse-3-li").text(laneThreeHorse.name);
+    $("#horse-4-li").text(laneFourHorse.name);
+    $("#horse-5-li").text(laneFiveHorse.name);
+    $("#horse-6-li").text(laneSixHorse.name);
+
+    console.log(laneOneHorse);
+    console.log(laneTwoHorse);
+    console.log(laneThreeHorse);
+    console.log(laneFourHorse);
+    console.log(laneFiveHorse);
+    console.log(laneSixHorse);
 }
 
 pickRandomHorses();
