@@ -177,6 +177,10 @@ var laneSixHorse;
 
 var playerMoney = 1000;
 
+var winnersArray = [];
+
+var playerBet;
+
 function pickRandomHorses () {
     laneOneHorse = horseArray[Math.floor(Math.random() * 20)];
 
@@ -216,20 +220,18 @@ function pickRandomHorses () {
 }
 
 pickRandomHorses();
+$("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
 
 $("button").click(function(){
-    console.log(laneOneHorse);
-    console.log(laneTwoHorse);
-    console.log(laneThreeHorse);
-    console.log(laneFourHorse);
-    console.log(laneFiveHorse);
-    console.log(laneSixHorse);
+    var intervalArray = [];
+
     var firstInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var secondInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var thirdInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var fourthInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var fifthInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var intervalTotal = firstInterval + secondInterval + thirdInterval + fourthInterval + fifthInterval;
+    intervalArray.push(intervalTotal);
     $("#horse-one-box").animate({left: "+=19vw"}, firstInterval);
     $("#horse-one-box").animate({left: "+=19vw"}, secondInterval);
     $("#horse-one-box").animate({left: "+=19vw"}, thirdInterval);
@@ -237,15 +239,16 @@ $("button").click(function(){
     $("#horse-one-box").animate({left: "+=19vw"}, fifthInterval);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneOneHorse.name + ": " + (intervalTotal / 1000) + "</li>");
+        winnersArray.push(laneOneHorse.name);
     }, intervalTotal);
 
-    console.log("this works");
     var firstIntervalTwo = Math.floor(Math.random() * (laneTwoHorse.maxInterval - laneTwoHorse.minInterval) + laneTwoHorse.minInterval);
     var secondIntervalTwo = Math.floor(Math.random() * (laneTwoHorse.maxInterval - laneTwoHorse.minInterval) + laneTwoHorse.minInterval);
     var thirdIntervalTwo = Math.floor(Math.random() * (laneTwoHorse.maxInterval - laneTwoHorse.minInterval) + laneTwoHorse.minInterval);
     var fourthIntervalTwo = Math.floor(Math.random() * (laneTwoHorse.maxInterval - laneTwoHorse.minInterval) + laneTwoHorse.minInterval);
     var fifthIntervalTwo = Math.floor(Math.random() * (laneTwoHorse.maxInterval - laneTwoHorse.minInterval) + laneTwoHorse.minInterval);
     var intervalTotalTwo = firstIntervalTwo + secondIntervalTwo + thirdIntervalTwo + fourthIntervalTwo + fifthIntervalTwo;
+    intervalArray.push(intervalTotalTwo);
     $("#horse-two-box").animate({left: "+=19vw"}, firstIntervalTwo);
     $("#horse-two-box").animate({left: "+=19vw"}, secondIntervalTwo);
     $("#horse-two-box").animate({left: "+=19vw"}, thirdIntervalTwo);
@@ -253,6 +256,7 @@ $("button").click(function(){
     $("#horse-two-box").animate({left: "+=19vw"}, fifthIntervalTwo);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneTwoHorse.name + ": " + (intervalTotalTwo / 1000) + "</li>");
+        winnersArray.push(laneTwoHorse.name);
     }, intervalTotalTwo);
 
     var firstIntervalThree = Math.floor(Math.random() * (laneThreeHorse.maxInterval - laneThreeHorse.minInterval) + laneThreeHorse.minInterval);
@@ -261,6 +265,7 @@ $("button").click(function(){
     var fourthIntervalThree = Math.floor(Math.random() * (laneThreeHorse.maxInterval - laneThreeHorse.minInterval) + laneThreeHorse.minInterval);
     var fifthIntervalThree = Math.floor(Math.random() * (laneThreeHorse.maxInterval - laneThreeHorse.minInterval) + laneThreeHorse.minInterval);
     var intervalTotalThree = firstIntervalThree + secondIntervalThree + thirdIntervalThree + fourthIntervalThree + fifthIntervalThree;
+    intervalArray.push(intervalTotalThree);
     $("#horse-three-box").animate({left: "+=19vw"}, firstIntervalThree);
     $("#horse-three-box").animate({left: "+=19vw"}, secondIntervalThree);
     $("#horse-three-box").animate({left: "+=19vw"}, thirdIntervalThree);
@@ -268,6 +273,7 @@ $("button").click(function(){
     $("#horse-three-box").animate({left: "+=19vw"}, fifthIntervalThree);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneThreeHorse.name + ": " + (intervalTotalThree / 1000) + "</li>");
+        winnersArray.push(laneThreeHorse.name);
     }, intervalTotalThree);
 
     var firstIntervalFour = Math.floor(Math.random() * (laneFourHorse.maxInterval - laneFourHorse.minInterval) + laneFourHorse.minInterval);
@@ -276,6 +282,7 @@ $("button").click(function(){
     var fourthIntervalFour = Math.floor(Math.random() * (laneFourHorse.maxInterval - laneFourHorse.minInterval) + laneFourHorse.minInterval);
     var fifthIntervalFour = Math.floor(Math.random() * (laneFourHorse.maxInterval - laneFourHorse.minInterval) + laneFourHorse.minInterval);
     var intervalTotalFour = firstIntervalFour + secondIntervalFour + thirdIntervalFour + fourthIntervalFour + fifthIntervalFour;
+    intervalArray.push(intervalTotalFour);
     $("#horse-four-box").animate({left: "+=19vw"}, firstIntervalFour);
     $("#horse-four-box").animate({left: "+=19vw"}, secondIntervalFour);
     $("#horse-four-box").animate({left: "+=19vw"}, thirdIntervalFour);
@@ -283,6 +290,7 @@ $("button").click(function(){
     $("#horse-four-box").animate({left: "+=19vw"}, fifthIntervalFour);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneFourHorse.name + ": " + (intervalTotalFour / 1000) + "</li>");
+        winnersArray.push(laneFourHorse.name);
     }, intervalTotalFour);
 
     var firstIntervalFive = Math.floor(Math.random() * (laneFiveHorse.maxInterval - laneFiveHorse.minInterval) + laneFiveHorse.minInterval);
@@ -291,6 +299,7 @@ $("button").click(function(){
     var fourthIntervalFive = Math.floor(Math.random() * (laneFiveHorse.maxInterval - laneFiveHorse.minInterval) + laneFiveHorse.minInterval);
     var fifthIntervalFive = Math.floor(Math.random() * (laneFiveHorse.maxInterval - laneFiveHorse.minInterval) + laneFiveHorse.minInterval);
     var intervalTotalFive = firstIntervalFive + secondIntervalFive + thirdIntervalFive + fourthIntervalFive + fifthIntervalFive;
+    intervalArray.push(intervalTotalFive);
     $("#horse-five-box").animate({left: "+=19vw"}, firstIntervalFive);
     $("#horse-five-box").animate({left: "+=19vw"}, secondIntervalFive);
     $("#horse-five-box").animate({left: "+=19vw"}, thirdIntervalFive);
@@ -298,6 +307,7 @@ $("button").click(function(){
     $("#horse-five-box").animate({left: "+=19vw"}, fifthIntervalFive);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneFiveHorse.name + ": " + (intervalTotalFive / 1000) + "</li>");
+        winnersArray.push(laneFiveHorse.name);
     }, intervalTotalFive);
 
     var firstIntervalSix = Math.floor(Math.random() * (laneSixHorse.maxInterval - laneSixHorse.minInterval) + laneSixHorse.minInterval);
@@ -306,6 +316,7 @@ $("button").click(function(){
     var fourthIntervalSix = Math.floor(Math.random() * (laneSixHorse.maxInterval - laneSixHorse.minInterval) + laneSixHorse.minInterval);
     var fifthIntervalSix = Math.floor(Math.random() * (laneSixHorse.maxInterval - laneSixHorse.minInterval) + laneSixHorse.minInterval);
     var intervalTotalSix = firstIntervalSix + secondIntervalSix + thirdIntervalSix + fourthIntervalSix + fifthIntervalSix;
+    intervalArray.push(intervalTotalSix);
     $("#horse-six-box").animate({left: "+=19vw"}, firstIntervalSix);
     $("#horse-six-box").animate({left: "+=19vw"}, secondIntervalSix);
     $("#horse-six-box").animate({left: "+=19vw"}, thirdIntervalSix);
@@ -313,8 +324,22 @@ $("button").click(function(){
     $("#horse-six-box").animate({left: "+=19vw"}, fifthIntervalSix);
     var timeoutId = setTimeout(function () {
         $("ol").append("<li>" + laneSixHorse.name + ": " + (intervalTotalSix / 1000) + "</li>");
+        winnersArray.push(laneSixHorse.name);
     }, intervalTotalSix);
+
+    var endingTime = Math.max(intervalTotal, intervalTotalTwo, intervalTotalThree, intervalTotalFour, intervalTotalFive, intervalTotalSix) + 3000;
+
+    var timeoutId = setTimeout(function () {
+        if (winnersArray[0] === "David Bowie") {
+            playerMoney += 100;
+        } else {
+            playerMoney -= 100;
+        }
+
+        $("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
+
+    }, endingTime);
+
 });
 
 
-$("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
