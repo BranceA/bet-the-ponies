@@ -217,7 +217,18 @@ function pickRandomHorses () {
     $("#horse-four-box").css("background-color", laneFourHorse.color);
     $("#horse-five-box").css("background-color", laneFiveHorse.color);
     $("#horse-six-box").css("background-color", laneSixHorse.color);
+
+    $("#bet-btn-1").text(laneOneHorse.name);
+    $("#bet-btn-2").text(laneTwoHorse.name);
+    $("#bet-btn-3").text(laneThreeHorse.name);
+    $("#bet-btn-4").text(laneFourHorse.name);
+    $("#bet-btn-5").text(laneFiveHorse.name);
+    $("#bet-btn-6").text(laneSixHorse.name);
 }
+
+$(".betting-button").click(function () {
+    playerBet = $(this).text();
+});
 
 pickRandomHorses();
 $("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
@@ -330,7 +341,7 @@ $("button").click(function(){
     var endingTime = Math.max(intervalTotal, intervalTotalTwo, intervalTotalThree, intervalTotalFour, intervalTotalFive, intervalTotalSix) + 3000;
 
     var timeoutId = setTimeout(function () {
-        if (winnersArray[0] === "David Bowie") {
+        if (winnersArray[0] === playerBet) {
             playerMoney += 100;
         } else {
             playerMoney -= 100;
