@@ -180,6 +180,7 @@ var playerMoney = 1000;
 var winnersArray = [];
 
 var playerBet;
+var betAmount;
 
 function pickRandomHorses () {
     laneOneHorse = horseArray[Math.floor(Math.random() * 20)];
@@ -228,6 +229,9 @@ function pickRandomHorses () {
 
 $(".betting-button").click(function () {
     playerBet = $(this).text();
+    var betString = $("#bet-amount").val();
+    betAmount = parseFloat(betString);
+    $("#bet-amount").val(" ");
 });
 
 pickRandomHorses();
@@ -342,9 +346,9 @@ $("button").click(function(){
 
     var timeoutId = setTimeout(function () {
         if (winnersArray[0] === playerBet) {
-            playerMoney += 100;
+            playerMoney += betAmount;
         } else {
-            playerMoney -= 100;
+            playerMoney -= betAmount;
         }
 
         $("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
