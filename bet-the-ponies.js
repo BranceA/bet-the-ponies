@@ -239,6 +239,7 @@ $("#money").html("<h2>$" + playerMoney.toFixed(2) + "</h2>");
 
 $("button").click(function(){
     var intervalArray = [];
+    winnersArray = [];
 
     var firstInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
     var secondInterval = Math.floor(Math.random() * (laneOneHorse.maxInterval - laneOneHorse.minInterval) + laneOneHorse.minInterval);
@@ -342,7 +343,7 @@ $("button").click(function(){
         winnersArray.push(laneSixHorse.name);
     }, intervalTotalSix);
 
-    var endingTime = Math.max(intervalTotal, intervalTotalTwo, intervalTotalThree, intervalTotalFour, intervalTotalFive, intervalTotalSix) + 3000;
+    var endingTime = Math.max(intervalTotal, intervalTotalTwo, intervalTotalThree, intervalTotalFour, intervalTotalFive, intervalTotalSix) + 1000;
 
     var timeoutId = setTimeout(function () {
         if (winnersArray[0] === playerBet) {
@@ -359,7 +360,7 @@ $("button").click(function(){
         pickRandomHorses();
         $(".test-horse").css("left", "0");
         $("ol").html(" ");
-    }, endingTime + 3000);
+    }, endingTime + 2000);
 
 });
 
