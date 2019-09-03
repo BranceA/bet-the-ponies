@@ -355,6 +355,12 @@ $("button").click(function(){
 
     }, endingTime);
 
+    var timeoutId = setTimeout(function () {
+        pickRandomHorses();
+        $(".test-horse").css("left", "0");
+        $("ol").html(" ");
+    }, endingTime + 3000);
+
 });
 
 
